@@ -14,11 +14,12 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(f"base dir: {BASE_DIR}")
 
-#concatinates to make <workspace>/tango_with_django_project/templates
+#makes <workspace>/tango_with_django_project/templates
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-print(f" template dir : {TEMPLATE_DIR}")
+
+#makes <workspace>/tango_with_django_project/static/.
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'tango_with_django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
+        'DIRS': [TEMPLATE_DIR, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,4 +123,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# with STATIC_URL set to /static/, we would be able to access static content at http://127.0.0.1:8000/static/.
+STATICFILES_DIRS = [STATIC_DIR, ]
 STATIC_URL = '/static/'

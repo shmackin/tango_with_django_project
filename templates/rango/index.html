@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+
+{% load staticfiles %}
+<!-- ^^informs Django’s template engine that we will be using static files within the template -->
+<!-- Template tags are denoted by curly brackets -->
 <html>
 
     <head>
@@ -14,6 +18,8 @@
         </div>
         <div>
             <a href="/rango/about">About</a><br />
+            <img src="{% static 'images/rango.jpg' %}"
+                 alt="Picture of Rango" />
         </div>
     </body>
 
