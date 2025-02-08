@@ -10,3 +10,9 @@ def index(request):
     #//The render() function will take this data and mash it together with the template to produce
     # a complete HTML page that is returned with a HttpResponse.//
     return render(request, 'rango/index.html', context=context_dict)
+
+def about(request):
+
+    context_dict= {'boldmessage':'This tutorial has been put together by Aimee'}
+
+    return render(request, 'rango/about.html', context=context_dict)
